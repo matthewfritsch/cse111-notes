@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C++ Basics (from the first lecture) &#8212; CSE111 Notes  documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Working with the Unix Timeshare" href="timeshare_help.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="c-basics-from-the-first-lecture">
+<h1>C++ Basics (from the first lecture)<a class="headerlink" href="#c-basics-from-the-first-lecture" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="moving-from-c-to-c">
+<h2>Moving from C to C++<a class="headerlink" href="#moving-from-c-to-c" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>C++ and C are (obviously) different. While you could write all your work in C and have no problem working with C++, you’re losing out on a lot of good features of C++. Genuinely, don’t do this.</p></li>
+<li><p>A majority of your issues when writing C++ can be solved by a web search (Google or otherwise). If you’ve ever taken a class in Java or Python, you’ll know you can genuinely just type “how do I do X in Java/Python” and there will be 10+ results.</p></li>
+</ul>
+</div>
+<div class="section" id="making-a-basic-c-file">
+<h2>Making a basic C++ file<a class="headerlink" href="#making-a-basic-c-file" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl>
+<dt>A “basic” C file in your mind might look something like this:</dt><dd><div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Printing #%d...</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>A “basic” C++ file is basically the exact same. Since there are minor differences, here is the code:</dt><dd><div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span> <span class="c1">//will explain later</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Printing #&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;...&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Obviously it’s not that hard for you to search “how to print in C++”, but just to save you a click, I added the above code.</p></li>
+<li><p>You can see every new item that’s printed is separated with “&lt;&lt;”. Type is irrelevant.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="c-types-that-are-not-in-c">
+<h2>C++ types that are not in C<a class="headerlink" href="#c-types-that-are-not-in-c" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl>
+<dt>string</dt><dd><ul>
+<li><p>“What? Strings exist in C, what the heck”. Yeah, but now they’re basically Java strings(except they’re NOT OBJECTS. Java, you suck.)</p>
+<blockquote>
+<div><div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+
+    <span class="n">string</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;a string!&quot;</span><span class="p">;</span>
+
+    <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="c1">//choose the next 6 letters starting at index 2. Should print out &quot;string&quot;</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;a new string!&quot;</span><span class="p">;</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;one more string, with a newline??</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>strings are totally usable with or without the string header (though if you’re using strings, might be worth including it.)</p></li>
+<li><p>There are TONS of functions associated with the string type. It’s worth looking into if you really care.</p></li>
+<li><p>You may also notice that there is no null terminator OR deletion of data associated with the strings. They’re all made on the stack, so do whatever you want you maniac.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>vector</dt><dd><ul>
+<li><p>If you’ve used ArrayList&lt;&gt; in Java, this is that. You can skip this block.</p></li>
+<li><dl>
+<dt>A vector is a variable-length array (aka, a list) of a type. Think LinkedList, but you didn’t have to make it or any of the functions associated with it.</dt><dd><div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">;</span> <span class="c1">//an empty vector that holds ints</span>
+
+    <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">//it now holds 1.</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">//prints out 1</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">//prints out 1</span>
+
+    <span class="n">v</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span> <span class="c1">//the vector is empty now.</span>
+
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">w</span><span class="p">{</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">9</span><span class="p">};</span> <span class="c1">//a vector with values 8, 6, 7...</span>
+    <span class="c1">//I want to delete the 7 at index 2. I can use v.erase, but I CANNOT use v.erase(2)</span>
+
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">i</span> <span class="o">=</span> <span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="n">v</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">);</span> <span class="c1">//this works. Yuck.</span>
+    <span class="c1">//can also do v.erase(v.begin()+2)</span>
+
+    <span class="c1">//insert at index 2 the number 4</span>
+    <span class="n">v</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>auto</dt><dd><ul>
+<li><p>auto is actually badass. I doubt you need to use it all the time, but you probably could.</p></li>
+<li><dl>
+<dt>You can define variables without knowing their types:</dt><dd><div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="c1">//...</span>
+<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//this is an int. duh.</span>
+<span class="k">auto</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//this is also an int</span>
+<span class="k">auto</span> <span class="n">b</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="c1">//int</span>
+<span class="k">auto</span><span class="o">*</span> <span class="n">b</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span> <span class="c1">//pointer to an int</span>
+<span class="c1">//you get the picture...</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>You also don’t need to type a bunch to get the correct type written out:</dt><dd><div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="c1">//...</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">allNames</span><span class="p">;</span>
+<span class="c1">//...</span>
+<span class="c1">//now we want to iterate through the vector in a for loop</span>
+
+<span class="c1">//we could write this</span>
+<span class="k">for</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">i</span> <span class="o">=</span> <span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="c1">//something is going on in this for loop</span>
+<span class="p">}</span>
+
+<span class="c1">//or, we could write this</span>
+<span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">i</span> <span class="o">=</span> <span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="c1">//something is going on in this for loop</span>
+<span class="p">}</span>
+<span class="c1">//textually it doesn&#39;t look like a big difference. But do you really want to type &quot;vector&lt;string&gt;::iterator&quot; instead of &quot;auto&quot;?</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Classes</dt><dd><ul>
+<li><dl>
+<dt>Now you can make actual classes in separate files (or in the same, if you like anarchy)</dt><dd><ul>
+<li><dl>
+<dt>main.cpp</dt><dd><div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;Person.hpp&quot;</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+
+    <span class="n">Person</span> <span class="n">p</span><span class="p">(</span><span class="s">&quot;Sammy&quot;</span><span class="p">,</span> <span class="mi">22</span><span class="p">);</span>
+    <span class="n">p</span><span class="p">.</span><span class="n">setStudent</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Person.hpp</dt><dd><div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#IFNDEF PERSON_HPP_</span>
+<span class="cp">#DEFINE PERSON_HPP_</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Person</span><span class="p">{</span>
+    <span class="k">private</span><span class="o">:</span>
+        <span class="n">string</span> <span class="n">name</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+        <span class="kt">bool</span> <span class="n">isStudent</span><span class="p">;</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="n">Person</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+        <span class="n">Person</span><span class="p">();</span>
+        <span class="o">~</span><span class="n">Person</span><span class="p">();</span>
+        <span class="kt">void</span> <span class="nf">setStudent</span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Person.cpp</dt><dd><div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;Person.hpp&quot;</span><span class="cp"></span>
+
+<span class="n">Person</span><span class="o">::</span><span class="n">Person</span><span class="p">(){</span> <span class="c1">//default constructor</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">isStudent</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">Person</span><span class="o">::</span><span class="n">Person</span><span class="p">(</span><span class="n">string</span> <span class="n">newName</span><span class="p">,</span> <span class="kt">int</span> <span class="n">newAge</span><span class="p">){</span> <span class="c1">//nondefault constructor</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">newName</span><span class="p">;</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="n">newAge</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">Person</span><span class="o">::~</span><span class="n">Person</span><span class="p">(){</span> <span class="c1">//destructor</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">isStudent</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">Person</span><span class="o">::</span><span class="n">setStudent</span><span class="p">(</span><span class="kt">bool</span> <span class="n">studentVal</span><span class="p">){</span> <span class="c1">//mutator</span>
+    <span class="n">isStudent</span> <span class="o">=</span> <span class="n">studentVal</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">CSE111 Notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="timeshare_help.html">Working with the Unix Timeshare</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">C++ Basics (from the first lecture)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#moving-from-c-to-c">Moving from C to C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#making-a-basic-c-file">Making a basic C++ file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#c-types-that-are-not-in-c">C++ types that are not in C</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="timeshare_help.html" title="previous chapter">Working with the Unix Timeshare</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, mfritsch.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/cpp_basics.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
