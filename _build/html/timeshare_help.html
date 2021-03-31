@@ -14,6 +14,7 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="C++ Basics (from the first lecture)" href="cpp_basics.html" />
     <link rel="prev" title="Welcome to Matt’s CSE111 notes!" href="index.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -69,10 +70,49 @@
 <div class="section" id="a-better-way-to-get-on-the-timeshare">
 <h2>A better way to get on the Timeshare<a class="headerlink" href="#a-better-way-to-get-on-the-timeshare" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><ul class="simple">
+<div><ul>
 <li><p>For those who are not super into working with the command-line and MUCH prefer working with their Windows File Explorer/MacOS Finder, you will likely want an alternative.</p></li>
 <li><p>Introducing SSHFS: Using SSH to create a temporary file system on your computer that, as you edit, is updated on the Unix Timeshare.</p></li>
-<li><p>I will add some videos here if people are actually interested in this. SSHFS is dope, and relieves some of the issues presented with using VSCode’s SSH or SSHFS extensions.</p></li>
+<li><dl>
+<dt>Here are a couple videos I made on how to get SSHFS to work on your system:</dt><dd><ul>
+<li><dl>
+<dt>Windows:</dt><dd><div style="width:100%;height:0px;position:relative;padding-bottom:56.250%;"><iframe src="https://streamable.com/e/anz77q?loop=0" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div></dd>
+</dl>
+</li>
+<li><dl>
+<dt>Linux:</dt><dd><div style="width:100%;height:0px;position:relative;padding-bottom:56.250%;"><iframe src="https://streamable.com/e/1d6q99?loop=0" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div><ul>
+<li><dl>
+<dt>codeconnect.sh:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo mkdir /run/media/matthew/UCSC_UNIX
+<span class="nb">cd</span> /run/media/matthew
+sudo chown matthew UCSC_UNIX
+chmod <span class="m">777</span> UCSC_UNIX
+sshfs mfritsch@unix.ucsc.edu:/afs/cats.ucsc.edu/users/p/mfritsch ./UCSC_UNIX
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>MacOS:</dt><dd><div style="width:100%;height:0px;position:relative;padding-bottom:56.250%;"><iframe src="https://streamable.com/e/zfyo14?loop=0" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div><ul>
+<li><dl>
+<dt>sshfs command:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sshfs mfritsch@unix.ucsc.edu:/afs/cats.ucsc.edu/users/p/mfritsch ./UCSC_UNIX
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
 </ul>
 </div></blockquote>
 </div>
@@ -103,6 +143,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#a-better-way-to-get-on-the-timeshare">A better way to get on the Timeshare</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="cpp_basics.html">C++ Basics (from the first lecture)</a></li>
 </ul>
 
 <div class="relations">
@@ -110,6 +151,7 @@
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="index.html" title="previous chapter">Welcome to Matt’s CSE111 notes!</a></li>
+      <li>Next: <a href="cpp_basics.html" title="next chapter">C++ Basics (from the first lecture)</a></li>
   </ul></li>
 </ul>
 </div>
