@@ -214,3 +214,30 @@ Static Casting
         //do this instead!
         int* ptr_to_c = static_cast<int*>(&c);
 
+Maps
+----
+
+- If you've used Python, it's a dictionary. If you've used Java, it's basically the same thing. If you're still confused (I'd be surprised), keep reading.
+
+- Maps are a data structure for "mapping" a value to another value. Think of a menu at a restaurant: Two different foods could be the same price, but you wouldn't have the same food with two different prices... because then you'd just choose the cheaper option.
+
+- Example:
+    .. code:: C++
+
+        #include <map>
+        #include <iostream>
+
+        using namespace std;
+
+        int main(){
+
+            map<string, double> menu;
+            menu["Quesarito"] = 3.99;
+            //inserted the pair ("Quesarito", 3.99)
+            menu["Quesarito"] = 4.29;
+            //replaced the price of "Quesarito" with 4.29
+            menu["Cheesy Gordita Crunch"] = 4.29;
+            //inserted the pair
+
+            return 0;
+        }

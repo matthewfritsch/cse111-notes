@@ -278,6 +278,36 @@
 </li>
 </ul>
 </div>
+<div class="section" id="maps">
+<h2>Maps<a class="headerlink" href="#maps" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>If you’ve used Python, it’s a dictionary. If you’ve used Java, it’s basically the same thing. If you’re still confused (I’d be surprised), keep reading.</p></li>
+<li><p>Maps are a data structure for “mapping” a value to another value. Think of a menu at a restaurant: Two different foods could be the same price, but you wouldn’t have the same food with two different prices… because then you’d just choose the cheaper option.</p></li>
+<li><dl>
+<dt>Example:</dt><dd><div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;map&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+
+    <span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">double</span><span class="o">&gt;</span> <span class="n">menu</span><span class="p">;</span>
+    <span class="n">menu</span><span class="p">[</span><span class="s">&quot;Quesarito&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">3.99</span><span class="p">;</span>
+    <span class="c1">//inserted the pair (&quot;Quesarito&quot;, 3.99)</span>
+    <span class="n">menu</span><span class="p">[</span><span class="s">&quot;Quesarito&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">4.29</span><span class="p">;</span>
+    <span class="c1">//replaced the price of &quot;Quesarito&quot; with 4.29</span>
+    <span class="n">menu</span><span class="p">[</span><span class="s">&quot;Cheesy Gordita Crunch&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">4.29</span><span class="p">;</span>
+    <span class="c1">//inserted the pair</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
 </div>
 
 
@@ -308,6 +338,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#classes">Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#namespaces">Namespaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#static-casting">Static Casting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#maps">Maps</a></li>
 </ul>
 </li>
 </ul>
