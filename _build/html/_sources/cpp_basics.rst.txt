@@ -81,7 +81,7 @@ Using Program Arguments
             }
 
     - We compile the program:
-        ..code:: bash
+        .. code:: bash
 
             g++ printArgs.cpp -o printMyArgs
 
