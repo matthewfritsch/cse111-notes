@@ -239,5 +239,9 @@ Maps
             menu["Cheesy Gordita Crunch"] = 4.29;
             //inserted the pair
 
+            for(const auto& menu_item: menu){
+                cout << menu_item.first << " --- " << menu_item.second << endl;
+            }
+
             return 0;
         }
