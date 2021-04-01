@@ -38,11 +38,11 @@ A better way to get on the Timeshare
             - codeconnect.sh:
                 .. code:: bash
                     
-                    sudo mkdir /run/media/matthew/UCSC_UNIX
-                    cd /run/media/matthew
+                    sudo mkdir ~/UCSC_UNIX
+                    cd ~
                     sudo chown matthew UCSC_UNIX
                     chmod 777 UCSC_UNIX
-                    sshfs mfritsch@unix.ucsc.edu:/afs/cats.ucsc.edu/users/p/mfritsch ./UCSC_UNIX
+                    sshfs <yourCruzID>@unix.ucsc.edu:/afs/cats.ucsc.edu/users/p/<yourCruzID> ./UCSC_UNIX
 
         - MacOS:
             .. raw:: html
@@ -51,5 +51,5 @@ A better way to get on the Timeshare
 
             - sshfs command:
                 .. code:: bash
-
-                    sshfs mfritsch@unix.ucsc.edu:/afs/cats.ucsc.edu/users/p/mfritsch ./UCSC_UNIX
+                
+                    sshfs <yourCruzID>@unix.ucsc.edu:/afs/cats.ucsc.edu/users/p/<yourCruzID> ./UCSC_UNIX
