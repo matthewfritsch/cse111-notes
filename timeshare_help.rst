@@ -40,7 +40,7 @@ A better way to get on the Timeshare
                     
                     sudo mkdir ~/UCSC_UNIX
                     cd ~
-                    sudo chown matthew UCSC_UNIX
+                    sudo chown <username> UCSC_UNIX
                     chmod 777 UCSC_UNIX
                     sshfs <yourCruzID>@unix.ucsc.edu:/afs/cats.ucsc.edu/users/p/<yourCruzID> ./UCSC_UNIX
 
@@ -51,5 +51,5 @@ A better way to get on the Timeshare
 
             - sshfs command:
                 .. code:: bash
-                
+
                     sshfs <yourCruzID>@unix.ucsc.edu:/afs/cats.ucsc.edu/users/p/<yourCruzID> ./UCSC_UNIX
