@@ -12,6 +12,7 @@ Welcome to Matt's CSE111 notes!
    
    timeshare_help
    cpp_basics
+   cpp_types
 
 
 Index

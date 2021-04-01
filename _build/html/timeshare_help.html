@@ -82,11 +82,11 @@
 <li><dl>
 <dt>Linux:</dt><dd><div style="width:100%;height:0px;position:relative;padding-bottom:56.250%;"><iframe src="https://streamable.com/e/1d6q99?loop=0" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div><ul>
 <li><dl>
-<dt>codeconnect.sh:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo mkdir /run/media/matthew/UCSC_UNIX
-<span class="nb">cd</span> /run/media/matthew
-sudo chown matthew UCSC_UNIX
+<dt>codeconnect.sh:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo mkdir ~/UCSC_UNIX
+<span class="nb">cd</span> ~
+sudo chown &lt;username&gt; UCSC_UNIX
 chmod <span class="m">777</span> UCSC_UNIX
-sshfs mfritsch@unix.ucsc.edu:/afs/cats.ucsc.edu/users/p/mfritsch ./UCSC_UNIX
+sshfs &lt;yourCruzID&gt;@unix.ucsc.edu:/afs/cats.ucsc.edu/users/p/&lt;yourCruzID&gt; ./UCSC_UNIX
 </pre></div>
 </div>
 </dd>
@@ -99,7 +99,7 @@ sshfs mfritsch@unix.ucsc.edu:/afs/cats.ucsc.edu/users/p/mfritsch ./UCSC_UNIX
 <li><dl>
 <dt>MacOS:</dt><dd><div style="width:100%;height:0px;position:relative;padding-bottom:56.250%;"><iframe src="https://streamable.com/e/zfyo14?loop=0" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div><ul>
 <li><dl>
-<dt>sshfs command:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sshfs mfritsch@unix.ucsc.edu:/afs/cats.ucsc.edu/users/p/mfritsch ./UCSC_UNIX
+<dt>sshfs command:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sshfs &lt;yourCruzID&gt;@unix.ucsc.edu:/afs/cats.ucsc.edu/users/p/&lt;yourCruzID&gt; ./UCSC_UNIX
 </pre></div>
 </div>
 </dd>

@@ -34,156 +34,96 @@ Making a basic C++ file
     - Obviously it's not that hard for you to search "how to print in C++", but just to save you a click, I added the above code.
     - You can see every new item that's printed is separated with "<<". Type is irrelevant.
 
-C++ types that are not in C
-----------------------------
-- string
-    - "What? Strings exist in C, what the heck". Yeah, but now they're basically Java strings(except they're NOT OBJECTS. Java, you suck.)
+Using Program Arguments
+-----------------------
 
-        .. code-block:: C++
+- If you've never used program arguments before, they're useful and they're not that bad. 
+- Imagine this: 
+    I made a random number guessing game, where I have six guesses to figure out which number was randomly chosen between 1 and 100. Cool, not a bad program.
+    
+    However, now my little brother comes in and wants to try it. He's really young, so maybe 1 to 100 is a bit much; I only want the program to run from 1 to 20 WITHOUT editing the code itself. How could we do that?
 
-            #include <string>
-            #include <iostream>
+- A standard C++ main function could look one of two ways:
+    - Without program arguments
+        .. code:: C++
 
-            using namespace std;
             int main(){
-                
-                string s = "a string!";
-                
-                char c = s[3];
-                cout << c << endl;
-                cout << s[2] << endl;
-                cout << s << endl;
-                cout << s.substr(2, 6) << endl;
-                //choose the next 6 letters starting at index 2. Should print out "string"
+                //...
+                return 0;
+            }
 
-                s = "a new string!";
-                s = "one more string, with a newline??\n";
+        - No program arguments are taken
+    - Or with program arguments
+        .. code:: C++
+
+            int main(int argc, char** argv){
+                //...
+                return 0;
+            }
+    
+        - A variable number of program arguments are taken.
+        - 'argc' represents the number of arguments
+        - 'argv' is an array of c-strings (character arrays) representing each argument. 
+
+- Here is an example, where each argument is printed on a new line:
+    - printArgs.cpp:
+        .. code:: C++
+
+            #include <iostream>
+            using namespace std;
+            int main(int argc, char **argv){
+
+                for(int x = 0; x < argc; x++){
+                    cout << argv[x] << endl;
+                }
 
                 return 0;
             }
 
-    - strings are totally usable with or without the string header (though if you're using strings, might be worth including it.)
-    - There are TONS of functions associated with the string type. It's worth looking into if you really care. 
-    - You may also notice that there is no null terminator OR deletion of data associated with the strings. They're all made on the stack, so do whatever you want you maniac.
-- vector
-    - If you've used ArrayList<> in Java, this is that. You can skip this block.
-    - A vector is a variable-length array (aka, a list) of a type. Think LinkedList, but you didn't have to make it or any of the functions associated with it.
-        .. code-block:: C++
+    - We compile the program:
+        ..code:: bash
 
-            #include <iostream>
-            #include <vector>
+            g++ printArgs.cpp -o printMyArgs
 
-            using namespace std;
-            int main(){
-                vector<int> v; //an empty vector that holds ints
+    - Then run it:
+        .. code:: bash
 
-                v.push_back(1); //it now holds 1.
+            ./printMyArgs
+        
+        Result:
 
-                cout << v.at(0) << endl; //prints out 1
-                cout << v[0] << endl; //prints out 1
+        .. code:: bash
+            
+            ./printMyArgs
 
-                v.clear(); //the vector is empty now.
+    - Then run it with an argument:
+        .. code:: bash
 
-                vector<int> w{8,6,7,5,3,0,9}; //a vector with values 8, 6, 7...
-                //I want to delete the 7 at index 2. I can use v.erase, but I CANNOT use v.erase(2)
+            ./printMyArgs with_an_argument
+        
+        Result:
+        
+        .. code:: bash
+            
+            ./printMyArgs
+            with_an_argument
 
-                vector<int>::iterator i = v.begin();
-                v.erase(i+2); //this works. Yuck.
-                //can also do v.erase(v.begin()+2)
-                
-                //insert at index 2 the number 4
-                v.insert(i+2, 4);
+    - Then run it with multiple arguments:
+        .. code:: bash
 
-                return 0;
-            }
+            ./printMyArgs a b c d eeeeeee
+        
+        Result:
 
+        .. code:: bash
+            
+            ./printMyArgs
+            a
+            b
+            c
+            d
+            eeeeeee
 
-- auto
-    - auto is actually badass. I doubt you need to use it all the time, but you probably could.
-    - You can define variables without knowing their types:
-        .. code-block:: C++
+- The first value in the c-string array (argv[0]) is always the name of the program. Every value following (argv[1], argv[2], ...) is an argument sent to the program from running it.
 
-            //...
-            int x = 0; //this is an int. duh.
-            auto a = 0; //this is also an int
-            auto b = x; //int
-            auto* b = &x; //pointer to an int
-            //you get the picture...
-
-    - You also don't need to type a bunch to get the correct type written out:
-        .. code-block:: C++
-
-            //...
-            vector<string> allNames;
-            //...
-            //now we want to iterate through the vector in a for loop
-
-            //we could write this
-            for(vector<string>::iterator i = v.begin(); i != v.end(); i++){
-                //something is going on in this for loop
-            }
-
-            //or, we could write this
-            for(auto i = v.begin(); i != v.end(); i++){
-                //something is going on in this for loop
-            }
-            //textually it doesn't look like a big difference. But do you really want to type "vector<string>::iterator" instead of "auto"?
-
-- Classes
-    - Now you can make actual classes in separate files (or in the same, if you like anarchy)
-        - main.cpp
-            .. code-block:: C++
-                
-                #include "Person.hpp"
-                int main(){
-
-                    Person p("Sammy", 22);
-                    p.setStudent(true);
-                    
-                    return 0;
-                }
-
-        - Person.hpp
-            .. code-block:: C++
-
-                #IFNDEF PERSON_HPP_
-                #DEFINE PERSON_HPP_
-
-                #include <string>
-                using namespace std;
-
-                class Person{
-                    private:
-                        string name;
-                        int age;
-                        bool isStudent;
-                    public:
-                        Person(string, int);
-                        Person();
-                        ~Person();
-                        void setStudent(bool);
-                }
-
-        - Person.cpp
-            .. code-block:: C++
-
-                #include "Person.hpp"
-
-                Person::Person(){ //default constructor
-                    name = "";
-                    age = 0;
-                    isStudent = false;
-                }
-                Person::Person(string newName, int newAge){ //nondefault constructor
-                    name = newName;
-                    age = newAge;
-                }
-                Person::~Person(){ //destructor
-                    name = "";
-                    age = 0;
-                    isStudent = false;
-                }
-
-                void Person::setStudent(bool studentVal){ //mutator
-                    isStudent = studentVal;
-                }
+- The appeal of this is that, without taking user input in any way AND without changing any of the code, I just changed my output. Neato.
