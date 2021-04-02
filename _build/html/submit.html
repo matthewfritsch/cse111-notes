@@ -68,19 +68,61 @@
 </div>
 <div class="section" id="copying-his-code-pdfs-etc-for-an-assignment">
 <h2>Copying his code/PDFs/etc. for an assignment<a class="headerlink" href="#copying-his-code-pdfs-etc-for-an-assignment" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>This one can seem a bit daunting if your Unix commandline experience is limited. Don’t worry, I’ll make it super clear (and if you’re still confused, DM me on Discord: macmoholic#2221)</p></li>
+<ul>
+<li><p>This one can seem a bit daunting if your Unix commandline experience is limited. Don’t worry, I’ll make it super clear (and if you’re still confused, DM me on Discord: macmoholic#2221)</p>
+<blockquote>
+<div><ul>
 <li><p>Open your SSH client (Putty, OpenSSH, terminal, etc.) to the unix.ucsc.edu server.</p></li>
+<li><p>Make a folder where you want to copy things over (this can be done using the command ‘mkdir’. e.g, “mkdir Lab1” will make the folder Lab1).</p></li>
+<li><p>Change directory into the folder “cd &lt;foldername&gt;”</p></li>
+<li><p>Now, you want to use the copy command to bring the files from Professor Mackey’s assignment folder into your new one. Go onto his website and find the “PWD” for an assignment/lab (should be in big, green text at the top). Then, run the command</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp -r &lt;pwd&gt;/* .
+</pre></div>
+</div>
+<p>(Make note of the “.” at the end!!! You need that.)</p>
+</div></blockquote>
+</li>
+<li><p>The above command reads: “copy (cp), recursively (-r), everything in the folder (&lt;pwd&gt;/*), to here (.)”</p></li>
+<li><p>One final example:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir Lab0
+<span class="nb">cd</span> Lab0
+cp -r /afs/cats.ucsc.edu/courses/cse112-wm/Assignments/lab0-intro-unix/* .
+</pre></div>
+</div>
+</div></blockquote>
+</li>
 </ul>
 </div>
 <div class="section" id="get-the-work-done-on-your-end">
 <h2>Get the work done on your end<a class="headerlink" href="#get-the-work-done-on-your-end" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>I don’t know how to help you with this. Write code. Preferably using Visual Studio Code (it’s pretty good). If you’re a “FOSS” only person, mad respect: there is an open source, non-Microsoft version of VSCode.</p></li>
+</ul>
 </div>
 <div class="section" id="make-saves-as-you-go">
 <h2>Make saves as you go<a class="headerlink" href="#make-saves-as-you-go" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>I believe you can use the submit command to make submissions as you go (like if you turned something in on canvas, but then made an edit and submitted the new one instead of the old one). But, I’m not 100% on that, so YMMV.</p></li>
+<li><p>You can make local saves, you can use git for version control, whatever works best for you. The main thing is: if you’re writing code using SSHFS or SSH, the only way for you to lose your changes is if your connection with the server stops. This is unlikely, using SSH or SSHFS. Just… don’t forget to do CTRL-S (or CMD-S if you’re on a Mac) to save your work every so often :)</p></li>
+</ul>
 </div>
 <div class="section" id="submitting-your-assignment">
 <h2>Submitting your assignment<a class="headerlink" href="#submitting-your-assignment" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>This also isn’t too bad! Don’t stress, and let me know if you’re having issues.</p></li>
+<li><p>Make sure you’re in your SSH client.</p></li>
+<li><p>The ‘submit’ command is really chill. You can run ‘submit -m’ to see the explanation on how it works. If you don’t care, then keep reading.</p></li>
+<li><dl>
+<dt>The format is “submit &lt;class&gt; &lt;assignment name&gt; &lt;[files you want to submit]&gt;”. For example:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>submit cse111-wm lab0 file1.cpp file2.cpp file3.cpp
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><p>Seems easy, right? Just make sure your ssh client is in the correct folder, and this should literally be all you have to do.</p></li>
+</ul>
 </div>
 </div>
 

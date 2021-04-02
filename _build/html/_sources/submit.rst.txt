@@ -25,14 +25,54 @@ Copying his code/PDFs/etc. for an assignment
 
 - This one can seem a bit daunting if your Unix commandline experience is limited. Don't worry, I'll make it super clear (and if you're still confused, DM me on Discord: macmoholic#2221)
 
-- Open your SSH client (Putty, OpenSSH, terminal, etc.) to the unix.ucsc.edu server. 
+    - Open your SSH client (Putty, OpenSSH, terminal, etc.) to the unix.ucsc.edu server. 
+
+    - Make a folder where you want to copy things over (this can be done using the command 'mkdir'. e.g, "mkdir Lab1" will make the folder Lab1).
+
+    - Change directory into the folder "cd <foldername>"
+
+    - Now, you want to use the copy command to bring the files from Professor Mackey's assignment folder into your new one. Go onto his website and find the "PWD" for an assignment/lab (should be in big, green text at the top). Then, run the command
+
+        .. code:: bash
+
+            cp -r <pwd>/* .
+
+        (Make note of the "." at the end!!! You need that.)
+
+    - The above command reads: "copy (cp), recursively (-r), everything in the folder (<pwd>/\*), to here (.)"
+
+    - One final example:
+
+    .. code:: bash
+
+        mkdir Lab0
+        cd Lab0
+        cp -r /afs/cats.ucsc.edu/courses/cse112-wm/Assignments/lab0-intro-unix/* .
 
 Get the work done on your end
 ------------------------------
 
+- I don't know how to help you with this. Write code. Preferably using Visual Studio Code (it's pretty good). If you're a "FOSS" only person, mad respect: there is an open source, non-Microsoft version of VSCode.
+
 Make saves as you go
 ---------------------
+
+- I believe you can use the submit command to make submissions as you go (like if you turned something in on canvas, but then made an edit and submitted the new one instead of the old one). But, I'm not 100% on that, so YMMV.
+
+- You can make local saves, you can use git for version control, whatever works best for you. The main thing is: if you're writing code using SSHFS or SSH, the only way for you to lose your changes is if your connection with the server stops. This is unlikely, using SSH or SSHFS. Just... don't forget to do CTRL-S (or CMD-S if you're on a Mac) to save your work every so often :)
 
 Submitting your assignment
 ----------------------------
 
+- This also isn't too bad! Don't stress, and let me know if you're having issues.
+
+- Make sure you're in your SSH client.
+
+- The 'submit' command is really chill. You can run 'submit -m' to see the explanation on how it works. If you don't care, then keep reading.
+
+- The format is "submit <class> <assignment name> <[files you want to submit]>". For example:
+    .. code:: bash
+
+        submit cse111-wm lab0 file1.cpp file2.cpp file3.cpp
+
+- Seems easy, right? Just make sure your ssh client is in the correct folder, and this should literally be all you have to do.
