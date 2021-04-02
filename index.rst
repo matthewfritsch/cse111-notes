@@ -11,6 +11,7 @@ Welcome to Matt's CSE111 notes!
    :caption: Contents:
    
    timeshare_help
+   submit
    cpp_basics
    cpp_types
 
