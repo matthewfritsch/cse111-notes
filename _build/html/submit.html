@@ -95,10 +95,28 @@ cp -r /afs/cats.ucsc.edu/courses/cse112-wm/Assignments/lab0-intro-unix/* .
 </li>
 </ul>
 </div>
-<div class="section" id="get-the-work-done-on-your-end">
-<h2>Get the work done on your end<a class="headerlink" href="#get-the-work-done-on-your-end" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>I don’t know how to help you with this. Write code. Preferably using Visual Studio Code (it’s pretty good). If you’re a “FOSS” only person, mad respect: there is an open source, non-Microsoft version of VSCode.</p></li>
+<div class="section" id="get-the-work-done-on-your-end-using-g">
+<h2>Get the work done on your end (using g++)<a class="headerlink" href="#get-the-work-done-on-your-end-using-g" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Write code. Preferably using Visual Studio Code (it’s pretty good). If you’re a “FOSS” only person, mad respect: there is an open source, non-Microsoft version of VSCode.</p></li>
+<li><dl>
+<dt>To test your code, you need to compile and run it. To compile using the GNU C Compiler (GCC), you can run:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>g++ &lt;filename&gt;.cpp -o &lt;executable&gt;
+
+g++ main.cpp -o runnable_file
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><p>Once your code is compiled into an executable file (in my example, called ‘runnable_file’), you can run it! Just use:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./&lt;executable
+
+./runnable_file
+</pre></div>
+</div>
+</div></blockquote>
+</li>
 </ul>
 </div>
 <div class="section" id="make-saves-as-you-go">
@@ -149,7 +167,7 @@ cp -r /afs/cats.ucsc.edu/courses/cse112-wm/Assignments/lab0-intro-unix/* .
 <li class="toctree-l1 current"><a class="current reference internal" href="#">How To Do Your Labs/Assignments</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#making-sure-you-re-connected-to-the-server">Making sure you’re connected to the server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#copying-his-code-pdfs-etc-for-an-assignment">Copying his code/PDFs/etc. for an assignment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#get-the-work-done-on-your-end">Get the work done on your end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-the-work-done-on-your-end-using-g">Get the work done on your end (using g++)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#make-saves-as-you-go">Make saves as you go</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#submitting-your-assignment">Submitting your assignment</a></li>
 </ul>

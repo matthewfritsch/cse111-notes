@@ -49,10 +49,25 @@ Copying his code/PDFs/etc. for an assignment
         cd Lab0
         cp -r /afs/cats.ucsc.edu/courses/cse112-wm/Assignments/lab0-intro-unix/* .
 
-Get the work done on your end
-------------------------------
+Get the work done on your end (using g++)
+------------------------------------------
 
-- I don't know how to help you with this. Write code. Preferably using Visual Studio Code (it's pretty good). If you're a "FOSS" only person, mad respect: there is an open source, non-Microsoft version of VSCode.
+- Write code. Preferably using Visual Studio Code (it's pretty good). If you're a "FOSS" only person, mad respect: there is an open source, non-Microsoft version of VSCode.
+
+- To test your code, you need to compile and run it. To compile using the GNU C Compiler (GCC), you can run:
+    .. code:: bash
+
+        g++ <filename>.cpp -o <executable>
+
+        g++ main.cpp -o runnable_file
+
+- Once your code is compiled into an executable file (in my example, called 'runnable_file'), you can run it! Just use:
+
+    .. code:: bash
+
+        ./<executable
+
+        ./runnable_file
 
 Make saves as you go
 ---------------------
