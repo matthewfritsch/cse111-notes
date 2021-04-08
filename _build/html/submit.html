@@ -100,7 +100,7 @@ cp -r /afs/cats.ucsc.edu/courses/cse112-wm/Assignments/lab0-intro-unix/* .
 <ul>
 <li><p>Write code. Preferably using Visual Studio Code (it’s pretty good). If you’re a “FOSS” only person, mad respect: there is an open source, non-Microsoft version of VSCode.</p></li>
 <li><dl>
-<dt>To test your code, you need to compile and run it. To compile using the GNU C Compiler (GCC), you can run:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>g++ &lt;filename&gt;.cpp -o &lt;executable&gt;
+<dt>To test individual C++ files, you need to compile and run it. To compile using the GNU C Compiler (GCC), you can run:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>g++ &lt;filename&gt;.cpp -o &lt;executable&gt;
 
 g++ main.cpp -o runnable_file
 </pre></div>
@@ -116,6 +116,20 @@ g++ main.cpp -o runnable_file
 </pre></div>
 </div>
 </div></blockquote>
+</li>
+<li><dl>
+<dt><strong>However</strong>, you are NOT required to use g++ to compile and run all of the files in our projects! You can use ‘make’ to get a lot of your work done.</dt><dd><ul>
+<li><p>Once you’re in the ‘code’ folder in the assignment, you can run:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>And it should compile the program for you.</p></li>
+</ul>
+</dd>
+</dl>
 </li>
 </ul>
 </div>

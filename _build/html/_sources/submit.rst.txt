@@ -54,7 +54,7 @@ Get the work done on your end (using g++)
 
 - Write code. Preferably using Visual Studio Code (it's pretty good). If you're a "FOSS" only person, mad respect: there is an open source, non-Microsoft version of VSCode.
 
-- To test your code, you need to compile and run it. To compile using the GNU C Compiler (GCC), you can run:
+- To test individual C++ files, you need to compile and run it. To compile using the GNU C Compiler (GCC), you can run:
     .. code:: bash
 
         g++ <filename>.cpp -o <executable>
@@ -68,6 +68,15 @@ Get the work done on your end (using g++)
         ./<executable
 
         ./runnable_file
+
+- **However**, you are NOT required to use g++ to compile and run all of the files in our projects! You can use 'make' to get a lot of your work done.
+    - Once you're in the 'code' folder in the assignment, you can run:
+
+        .. code:: bash
+
+            make
+    
+    - And it should compile the program for you.
 
 Make saves as you go
 ---------------------
