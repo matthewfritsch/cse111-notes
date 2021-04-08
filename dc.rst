@@ -51,7 +51,11 @@ How do I use it?
         - **r:** reverse all values of the stack
         - **R:** take the top value off of the stack (call it n). select the top n values of the stack, and cyclically rotate them (e.g 3 2 1 0 would make n = 3. The top three values of the stack [2, 1, 0] are rotated once [0, 2, 1])
     - There are more, but I'm leaving out Registers, Parameters, and Strings because I don't think those are super pertinent to our experience with dc. If they are, I will add these later.
-        
-        
+    - A video demonstration:
+        .. raw:: html
+
+            <div style="width:100%;height:0px;position:relative;padding-bottom:56.250%;"><iframe src="https://streamable.com/e/ymcnkh?loop=0" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
+            
+            
 
         
