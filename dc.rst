@@ -1,0 +1,57 @@
+What is dc, and how do I use it?
+==================================
+
+What is dc?
+------------
+
+- 'dc' is an arbitrary precision, reverse-polish calculator. The name 'dc' is short for 'desk calculator'.
+- Its purpose is, obviously, to be a basic calculator. Though, this calculator doesn't behave exactly like a TI-84 or an iPhone calculator. dc is written to have no upper limit.
+- If you wrote a simple calculator in C++ right now (entering in digits and operators using cin), then you would find an upper limit pretty quickly (try doing 2,000,000,000 * 2,000,000,000 * 2,000,000,000).
+- The purpose of dc is to have arbitrary precision, meaning it will run out of digits only when your system runs out of memory to create more digits. 
+- When using the program, numbers are added to a stack. Operations are performed on members of the stack.
+  
+
+How do I use it?
+----------------
+
+- In any Unix system with dc installed, run dc:
+    .. code:: bash
+
+        dc
+
+- You can't use the standard equation format you're most likely used to (e.g "5*4"). You need to add values to the stack, and then provide an operation:
+    .. code:: bash
+
+        5 4 //this is where I added both values to the stack. You can put plenty of numbers here
+        f //this is to print out the stack. The next two lines should both be numbers, since I only have two digits in the stack.
+        4 //the program prints out 4 since it was last added to the stack
+        5 //the program prints out 5 since it was added to the stack before the 4
+        c //'c' is used to clear the stack.
+        f //nothing is printed because the stack was cleared.
+
+- Here is a sort of glossary of commands/operations you can use (these can also be found in the manpage of dc)
+    - Printing Commands
+        - p
+        - n
+        - P
+        - f
+    - Arithmetic
+        - +
+        - -
+        - *
+        - /
+        - %
+        - ~
+        - ^
+        - |
+        - v
+    - Stack Control
+        - c
+        - d
+        - r
+        - R
+    - There are more, but I'm leaving out Registers, Parameters, and Strings because I don't think those are super pertinent to our experience with dc. If they are, I will add these later.
+        
+        
+
+        

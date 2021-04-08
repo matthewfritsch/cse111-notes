@@ -14,6 +14,7 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="What is dc, and how do I use it?" href="dc.html" />
     <link rel="prev" title="C++ Basics (from the first lecture)" href="cpp_basics.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -35,10 +36,10 @@
 <h1>C++ types/features/etc. that are not in C<a class="headerlink" href="#c-types-features-etc-that-are-not-in-c" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="string">
 <h2>String<a class="headerlink" href="#string" title="Permalink to this headline">¶</a></h2>
-<ul>
-<li><p>“What? Strings exist in C, what the heck”. Yeah, but now they’re basically Java strings(except they’re NOT OBJECTS. Java, you suck.)</p>
-<blockquote>
-<div><div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<ul class="simple">
+<li><p>“What? Strings exist in C, what the heck”. Yeah, but now they’re basically Java strings(except they’re NOT OBJECTS. Java, you suck.)</p></li>
+</ul>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
@@ -60,8 +61,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-</div></blockquote>
-</li>
+<ul class="simple">
 <li><p>strings are totally usable with or without the string header (though if you’re using strings, might be worth including it.)</p></li>
 <li><p>There are TONS of functions associated with the string type. It’s worth looking into if you really care.</p></li>
 <li><p>You may also notice that there is no null terminator OR deletion of data associated with the strings. They’re all made on the stack, so do whatever you want you maniac.</p></li>
@@ -250,20 +250,19 @@
 </div>
 <div class="section" id="static-casting">
 <h2>Static Casting<a class="headerlink" href="#static-casting" title="Permalink to this headline">¶</a></h2>
-<ul>
-<li><p>Casting is a way of changing the type of a variable to a different type. In C, sometimes this was as easy as</p>
-<blockquote>
-<div><div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="kt">float</span> <span class="n">f</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+<ul class="simple">
+<li><p>Casting is a way of changing the type of a variable to a different type. In C, sometimes this was as easy as</p></li>
+</ul>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="kt">float</span> <span class="n">f</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">f</span><span class="p">;</span> <span class="c1">//this</span>
 <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">f</span><span class="p">;</span> <span class="c1">//or this</span>
 </pre></div>
 </div>
-</div></blockquote>
-</li>
+<ul class="simple">
 <li><p>While this is technically still available in C++, casting is now sketchy. If you cast one object variable to another type, it’s possible you’ll run into runtime errors. Yikes.</p></li>
-<li><p><strong>Static Casting</strong>: In the first lecture, Professor Mackey really only discussed using static casting, so that’s all I’m going over right now:</p>
-<blockquote>
-<div><div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">float</span> <span class="n">f</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+<li><p><strong>Static Casting</strong>: In the first lecture, Professor Mackey really only discussed using static casting, so that’s all I’m going over right now:</p></li>
+</ul>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">float</span> <span class="n">f</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
 
 <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;x&#39;</span><span class="p">;</span>
@@ -274,9 +273,6 @@
 <span class="kt">int</span><span class="o">*</span> <span class="n">ptr_to_c</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">*&gt;</span><span class="p">(</span><span class="o">&amp;</span><span class="n">c</span><span class="p">);</span>
 </pre></div>
 </div>
-</div></blockquote>
-</li>
-</ul>
 </div>
 <div class="section" id="maps">
 <h2>Maps<a class="headerlink" href="#maps" title="Permalink to this headline">¶</a></h2>
@@ -346,6 +342,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#maps">Maps</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="dc.html">What is dc, and how do I use it?</a></li>
 </ul>
 
 <div class="relations">
@@ -353,6 +350,7 @@
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="cpp_basics.html" title="previous chapter">C++ Basics (from the first lecture)</a></li>
+      <li>Next: <a href="dc.html" title="next chapter">What is dc, and how do I use it?</a></li>
   </ul></li>
 </ul>
 </div>

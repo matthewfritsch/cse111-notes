@@ -14,6 +14,7 @@ Welcome to Matt's CSE111 notes!
    submit
    cpp_basics
    cpp_types
+   dc
 
 
 Index

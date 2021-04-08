@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What is dc, and how do I use it? &#8212; CSE111 Notes  documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="C++ types/features/etc. that are not in C" href="cpp_types.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="what-is-dc-and-how-do-i-use-it">
+<h1>What is dc, and how do I use it?<a class="headerlink" href="#what-is-dc-and-how-do-i-use-it" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-dc">
+<h2>What is dc?<a class="headerlink" href="#what-is-dc" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>‘dc’ is an arbitrary precision, reverse-polish calculator. The name ‘dc’ is short for ‘desk calculator’.</p></li>
+<li><p>Its purpose is, obviously, to be a basic calculator. Though, this calculator doesn’t behave exactly like a TI-84 or an iPhone calculator. dc is written to have no upper limit.</p></li>
+<li><p>If you wrote a simple calculator in C++ right now (entering in digits and operators using cin), then you would find an upper limit pretty quickly (try doing 2,000,000,000 * 2,000,000,000 * 2,000,000,000).</p></li>
+<li><p>The purpose of dc is to have arbitrary precision, meaning it will run out of digits only when your system runs out of memory to create more digits.</p></li>
+<li><p>When using the program, numbers are added to a stack. Operations are performed on members of the stack.</p></li>
+</ul>
+</div>
+<div class="section" id="how-do-i-use-it">
+<h2>How do I use it?<a class="headerlink" href="#how-do-i-use-it" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl>
+<dt>In any Unix system with dc installed, run dc:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dc
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>You can’t use the standard equation format you’re most likely used to (e.g “5*4”). You need to add values to the stack, and then provide an operation:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">5</span> <span class="m">4</span> //this is where I added both values to the stack. You can put plenty of numbers here
+f //this is to print out the stack. The next two lines should both be numbers, since I only have two digits <span class="k">in</span> the stack.
+<span class="m">4</span> //the program prints out <span class="m">4</span> since it was last added to the stack
+<span class="m">5</span> //the program prints out <span class="m">5</span> since it was added to the stack before the <span class="m">4</span>
+c //<span class="s1">&#39;c&#39;</span> is used to clear the stack.
+f //nothing is printed because the stack was cleared.
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Here is a sort of glossary of commands/operations you can use (these can also be found in the manpage of dc)</dt><dd><ul>
+<li><dl class="simple">
+<dt>Printing Commands</dt><dd><ul class="simple">
+<li><p>p</p></li>
+<li><p>n</p></li>
+<li><p>P</p></li>
+<li><p>f</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Arithmetic</dt><dd><ul>
+<li><ul class="simple">
+<li></li>
+</ul>
+</li>
+<li><ul class="simple">
+<li></li>
+</ul>
+</li>
+<li><ul class="simple">
+<li></li>
+</ul>
+</li>
+<li><p>/</p></li>
+<li><p>%</p></li>
+<li><p>~</p></li>
+<li><p>^</p></li>
+<li><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p>v</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Stack Control</dt><dd><ul class="simple">
+<li><p>c</p></li>
+<li><p>d</p></li>
+<li><p>r</p></li>
+<li><p>R</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>There are more, but I’m leaving out Registers, Parameters, and Strings because I don’t think those are super pertinent to our experience with dc. If they are, I will add these later.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">CSE111 Notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="timeshare_help.html">Working with the Unix Timeshare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="submit.html">How To Do Your Labs/Assignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cpp_basics.html">C++ Basics (from the first lecture)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cpp_types.html">C++ types/features/etc. that are not in C</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">What is dc, and how do I use it?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-dc">What is dc?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-do-i-use-it">How do I use it?</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="cpp_types.html" title="previous chapter">C++ types/features/etc. that are not in C</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, mfritsch.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/dc.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -4,28 +4,28 @@ String
 ------
 - "What? Strings exist in C, what the heck". Yeah, but now they're basically Java strings(except they're NOT OBJECTS. Java, you suck.)
 
-    .. code-block:: C++
+.. code-block:: C++
 
-        #include <string>
-        #include <iostream>
+    #include <string>
+    #include <iostream>
 
-        using namespace std;
-        int main(){
-            
-            string s = "a string!";
-            
-            char c = s[3];
-            cout << c << endl;
-            cout << s[2] << endl;
-            cout << s << endl;
-            cout << s.substr(2, 6) << endl;
-            //choose the next 6 letters starting at index 2. Should print out "string"
+    using namespace std;
+    int main(){
+        
+        string s = "a string!";
+        
+        char c = s[3];
+        cout << c << endl;
+        cout << s[2] << endl;
+        cout << s << endl;
+        cout << s.substr(2, 6) << endl;
+        //choose the next 6 letters starting at index 2. Should print out "string"
 
-            s = "a new string!";
-            s = "one more string, with a newline??\n";
+        s = "a new string!";
+        s = "one more string, with a newline??\n";
 
-            return 0;
-        }
+        return 0;
+    }
 
 - strings are totally usable with or without the string header (though if you're using strings, might be worth including it.)
 - There are TONS of functions associated with the string type. It's worth looking into if you really care. 
@@ -193,26 +193,26 @@ Static Casting
 
 - Casting is a way of changing the type of a variable to a different type. In C, sometimes this was as easy as
 
-    .. code:: C
+.. code:: C
 
-        float f = 3.14;
-        int i = f; //this
-        int j = (int) f; //or this
+    float f = 3.14;
+    int i = f; //this
+    int j = (int) f; //or this
 
 - While this is technically still available in C++, casting is now sketchy. If you cast one object variable to another type, it's possible you'll run into runtime errors. Yikes.
 - **Static Casting**: In the first lecture, Professor Mackey really only discussed using static casting, so that's all I'm going over right now:
 
-    .. code:: C++
+.. code:: C++
 
-        float f = 3.14;
-        int i = static_cast<int>(f);
+    float f = 3.14;
+    int i = static_cast<int>(f);
 
-        char c = 'x';
+    char c = 'x';
 
-        //this is bad, and might produce runtime errors:
-        int* badptr_to_c = (int*) &c;
-        //do this instead!
-        int* ptr_to_c = static_cast<int*>(&c);
+    //this is bad, and might produce runtime errors:
+    int* badptr_to_c = (int*) &c;
+    //do this instead!
+    int* ptr_to_c = static_cast<int*>(&c);
 
 Maps
 ----
