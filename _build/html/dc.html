@@ -68,35 +68,41 @@ f //nothing is printed because the stack was cleared.
 <li><dl class="simple">
 <dt>Here is a sort of glossary of commands/operations you can use (these can also be found in the manpage of dc)</dt><dd><ul class="simple">
 <li><dl class="simple">
+<dt>Quit Command</dt><dd><ul>
+<li><p><strong>q:</strong> quits the program</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
 <dt>Printing Commands</dt><dd><ul>
-<li><p>p: print the top value of the stack, without changing the stack.</p></li>
-<li><p>n: print the top value of the stack, and pop it off. Does NOT print a newline.</p></li>
-<li><p>f: print the full contents of the stack, without changing the stack.</p></li>
+<li><p><strong>p:</strong> print the top value of the stack, without changing the stack.</p></li>
+<li><p><strong>n:</strong> print the top value of the stack, and pop it off. Does NOT print a newline.</p></li>
+<li><p><strong>f:</strong> print the full contents of the stack, without changing the stack.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
 <dt>Arithmetic</dt><dd><ul>
-<li><p><strong>+:</strong>: pop the top two values from the stack, add them, and push the result.</p></li>
+<li><p><strong>+:</strong> pop the top two values from the stack, add them, and push the result.</p></li>
 <li><p><strong>-:</strong> pop the top two values from the stack, subtract them (bottom minus top), and push the result</p></li>
 <li><p><strong>*:</strong> pop the top two values from the stack, multiply them, and push the result.</p></li>
-<li><p><strong>/:</strong></p></li>
-<li><p><strong>%:</strong></p></li>
-<li><p>~:</p></li>
-<li><p>^:</p></li>
-<li><p>|:</p></li>
-<li><p>v:</p></li>
+<li><p><strong>/:</strong> pop the top two values from the stack, divide them (bottom divided by top), and push the result</p></li>
+<li><p><strong>%:</strong> pop the top two values from the stack, find the remainder of their division (bottom modulus top), and push the result</p></li>
+<li><p><strong>~:</strong> pop the top two values from the stack, divide them (bottom divided by top), and push the result as well as the remainder</p></li>
+<li><p><strong>^:</strong> pop the top two values from the stack, exponentiate (bottom to the power of top), and push the result</p></li>
+<li><p><strong>v:</strong> pop the top value, compute the square root, and push the result</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
 <dt>Stack Control</dt><dd><ul>
-<li><p>c</p></li>
-<li><p>d</p></li>
-<li><p>r</p></li>
-<li><p>R</p></li>
+<li><p><strong>c:</strong> clear all values from the stack</p></li>
+<li><p><strong>d:</strong> duplicate the top value of the stack, and push it to the stack.</p></li>
+<li><p><strong>r:</strong> reverse all values of the stack</p></li>
+<li><p><strong>R:</strong> take the top value off of the stack (call it n). select the top n values of the stack, and cyclically rotate them (e.g 3 2 1 0 would make n = 3. The top three values of the stack [2, 1, 0] are rotated once [0, 2, 1])</p></li>
 </ul>
 </dd>
 </dl>

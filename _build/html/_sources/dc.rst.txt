@@ -30,25 +30,26 @@ How do I use it?
         f //nothing is printed because the stack was cleared.
 
 - Here is a sort of glossary of commands/operations you can use (these can also be found in the manpage of dc)
+    - Quit Command
+        - **q:** quits the program
     - Printing Commands
-        - p: print the top value of the stack, without changing the stack.
-        - n: print the top value of the stack, and pop it off. Does NOT print a newline.
-        - f: print the full contents of the stack, without changing the stack.
+        - **p:** print the top value of the stack, without changing the stack.
+        - **n:** print the top value of the stack, and pop it off. Does NOT print a newline.
+        - **f:** print the full contents of the stack, without changing the stack.
     - Arithmetic
-        - **+:**: pop the top two values from the stack, add them, and push the result.
+        - **+:** pop the top two values from the stack, add them, and push the result.
         - **-:** pop the top two values from the stack, subtract them (bottom minus top), and push the result
         - **\*:** pop the top two values from the stack, multiply them, and push the result.
-        - **/:** 
-        - **%:** 
-        - ~: 
-        - ^: 
-        - \|: 
-        - v:
+        - **/:** pop the top two values from the stack, divide them (bottom divided by top), and push the result
+        - **%:** pop the top two values from the stack, find the remainder of their division (bottom modulus top), and push the result
+        - **~:** pop the top two values from the stack, divide them (bottom divided by top), and push the result as well as the remainder
+        - **^:** pop the top two values from the stack, exponentiate (bottom to the power of top), and push the result
+        - **v:** pop the top value, compute the square root, and push the result
     - Stack Control
-        - c
-        - d
-        - r
-        - R
+        - **c:** clear all values from the stack
+        - **d:** duplicate the top value of the stack, and push it to the stack.
+        - **r:** reverse all values of the stack
+        - **R:** take the top value off of the stack (call it n). select the top n values of the stack, and cyclically rotate them (e.g 3 2 1 0 would make n = 3. The top three values of the stack [2, 1, 0] are rotated once [0, 2, 1])
     - There are more, but I'm leaving out Registers, Parameters, and Strings because I don't think those are super pertinent to our experience with dc. If they are, I will add these later.
         
         
