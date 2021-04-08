@@ -65,47 +65,34 @@ f //nothing is printed because the stack was cleared.
 </dd>
 </dl>
 </li>
-<li><dl>
-<dt>Here is a sort of glossary of commands/operations you can use (these can also be found in the manpage of dc)</dt><dd><ul>
 <li><dl class="simple">
-<dt>Printing Commands</dt><dd><ul class="simple">
-<li><p>p</p></li>
-<li><p>n</p></li>
-<li><p>P</p></li>
-<li><p>f</p></li>
+<dt>Here is a sort of glossary of commands/operations you can use (these can also be found in the manpage of dc)</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>Printing Commands</dt><dd><ul>
+<li><p>p: print the top value of the stack, without changing the stack.</p></li>
+<li><p>n: print the top value of the stack, and pop it off. Does NOT print a newline.</p></li>
+<li><p>f: print the full contents of the stack, without changing the stack.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl>
+<li><dl class="simple">
 <dt>Arithmetic</dt><dd><ul>
-<li><ul class="simple">
-<li></li>
-</ul>
-</li>
-<li><ul class="simple">
-<li></li>
-</ul>
-</li>
-<li><ul class="simple">
-<li></li>
-</ul>
-</li>
-<li><p>/</p></li>
-<li><p>%</p></li>
-<li><p>~</p></li>
-<li><p>^</p></li>
-<li><div class="line-block">
-<div class="line"><br /></div>
-</div>
-</li>
-<li><p>v</p></li>
+<li><p><strong>+:</strong>: pop the top two values from the stack, add them, and push the result.</p></li>
+<li><p><strong>-:</strong> pop the top two values from the stack, subtract them (bottom minus top), and push the result</p></li>
+<li><p><strong>*:</strong> pop the top two values from the stack, multiply them, and push the result.</p></li>
+<li><p><strong>/:</strong></p></li>
+<li><p><strong>%:</strong></p></li>
+<li><p>~:</p></li>
+<li><p>^:</p></li>
+<li><p>|:</p></li>
+<li><p>v:</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Stack Control</dt><dd><ul class="simple">
+<dt>Stack Control</dt><dd><ul>
 <li><p>c</p></li>
 <li><p>d</p></li>
 <li><p>r</p></li>

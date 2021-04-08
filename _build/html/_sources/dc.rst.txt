@@ -31,20 +31,19 @@ How do I use it?
 
 - Here is a sort of glossary of commands/operations you can use (these can also be found in the manpage of dc)
     - Printing Commands
-        - p
-        - n
-        - P
-        - f
+        - p: print the top value of the stack, without changing the stack.
+        - n: print the top value of the stack, and pop it off. Does NOT print a newline.
+        - f: print the full contents of the stack, without changing the stack.
     - Arithmetic
-        - +
-        - -
-        - *
-        - /
-        - %
-        - ~
-        - ^
-        - |
-        - v
+        - **+:**: pop the top two values from the stack, add them, and push the result.
+        - **-:** pop the top two values from the stack, subtract them (bottom minus top), and push the result
+        - **\*:** pop the top two values from the stack, multiply them, and push the result.
+        - **/:** 
+        - **%:** 
+        - ~: 
+        - ^: 
+        - \|: 
+        - v:
     - Stack Control
         - c
         - d
