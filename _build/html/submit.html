@@ -69,20 +69,18 @@
 <div class="section" id="copying-his-code-pdfs-etc-for-an-assignment">
 <h2>Copying his code/PDFs/etc. for an assignment<a class="headerlink" href="#copying-his-code-pdfs-etc-for-an-assignment" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p>This one can seem a bit daunting if your Unix commandline experience is limited. Don’t worry, I’ll make it super clear (and if you’re still confused, DM me on Discord: macmoholic#2221)</p>
-<blockquote>
-<div><ul>
+<li><dl>
+<dt>This one can seem a bit daunting if your Unix commandline experience is limited. Don’t worry, I’ll make it super clear (and if you’re still confused, DM me on Discord: macmoholic#2221)</dt><dd><ul class="simple">
 <li><p>Open your SSH client (Putty, OpenSSH, terminal, etc.) to the unix.ucsc.edu server.</p></li>
 <li><p>Make a folder where you want to copy things over (this can be done using the command ‘mkdir’. e.g, “mkdir Lab1” will make the folder Lab1).</p></li>
 <li><p>Change directory into the folder “cd &lt;foldername&gt;”</p></li>
-<li><p>Now, you want to use the copy command to bring the files from Professor Mackey’s assignment folder into your new one. Go onto his website and find the “PWD” for an assignment/lab (should be in big, green text at the top). Then, run the command</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp -r &lt;pwd&gt;/* .
+<li><p>Now, you want to use the copy command to bring the files from Professor Mackey’s assignment folder into your new one. Go onto his website and find the “PWD” for an assignment/lab (should be in big, green text at the top). Then, run the command</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp -r &lt;pwd&gt;/* .
 </pre></div>
 </div>
 <p>(Make note of the “.” at the end!!! You need that.)</p>
-</div></blockquote>
-</li>
+<ul class="simple">
 <li><p>The above command reads: “copy (cp), recursively (-r), everything in the folder (&lt;pwd&gt;/*), to here (.)”</p></li>
 <li><p>One final example:</p></li>
 </ul>
@@ -91,7 +89,8 @@
 cp -r /afs/cats.ucsc.edu/courses/cse112-wm/Assignments/lab0-intro-unix/* .
 </pre></div>
 </div>
-</div></blockquote>
+</dd>
+</dl>
 </li>
 </ul>
 </div>
@@ -108,24 +107,22 @@ g++ main.cpp -o runnable_file
 </dd>
 </dl>
 </li>
-<li><p>Once your code is compiled into an executable file (in my example, called ‘runnable_file’), you can run it! Just use:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./&lt;executable
+<li><p>Once your code is compiled into an executable file (in my example, called ‘runnable_file’), you can run it! Just use:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./&lt;executable
 
 ./runnable_file
 </pre></div>
 </div>
-</div></blockquote>
-</li>
+<ul>
 <li><dl>
-<dt><strong>However</strong>, you are NOT required to use g++ to compile and run all of the files in our projects! You can use ‘make’ to get a lot of your work done.</dt><dd><ul>
-<li><p>Once you’re in the ‘code’ folder in the assignment, you can run:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make
+<dt><strong>However</strong>, you are NOT required to use g++ to compile and run all of the files in our projects! You can use ‘make’ to get a lot of your work done.</dt><dd><ul class="simple">
+<li><p>Once you’re in the ‘code’ folder in the assignment, you can run:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make
 </pre></div>
 </div>
-</div></blockquote>
-</li>
+<ul class="simple">
 <li><p>And it should compile the program for you.</p></li>
 </ul>
 </dd>
@@ -142,17 +139,16 @@ g++ main.cpp -o runnable_file
 </div>
 <div class="section" id="submitting-your-assignment">
 <h2>Submitting your assignment<a class="headerlink" href="#submitting-your-assignment" title="Permalink to this headline">¶</a></h2>
-<ul>
+<ul class="simple">
 <li><p>This also isn’t too bad! Don’t stress, and let me know if you’re having issues.</p></li>
 <li><p>Make sure you’re in your SSH client.</p></li>
 <li><p>The ‘submit’ command is really chill. You can run ‘submit -m’ to see the explanation on how it works. If you don’t care, then keep reading.</p></li>
-<li><dl>
-<dt>The format is “submit &lt;class&gt; &lt;assignment name&gt; &lt;[files you want to submit]&gt;”. For example:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>submit cse111-wm lab0 file1.cpp file2.cpp file3.cpp
+<li><p>The format is “submit &lt;class&gt; &lt;assignment name&gt; &lt;[files you want to submit]&gt;”. For example:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>submit cse111-wm lab0 file1.cpp file2.cpp file3.cpp
 </pre></div>
 </div>
-</dd>
-</dl>
-</li>
+<ul class="simple">
 <li><p>Seems easy, right? Just make sure your ssh client is in the correct folder, and this should literally be all you have to do.</p></li>
 </ul>
 </div>
@@ -188,6 +184,7 @@ g++ main.cpp -o runnable_file
 </li>
 <li class="toctree-l1"><a class="reference internal" href="cpp_basics.html">C++ Basics (from the first lecture)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cpp_types.html">C++ types/features/etc. that are not in C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dc.html">What is dc, and how do I use it?</a></li>
 </ul>
 
 <div class="relations">

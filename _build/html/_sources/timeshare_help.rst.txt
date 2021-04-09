@@ -22,34 +22,34 @@ How to get on the Timeshare using SSH
         
 A better way to get on the Timeshare
 ------------------------------------
-    - For those who are not super into working with the command-line and MUCH prefer working with their Windows File Explorer/MacOS Finder, you will likely want an alternative.
-    - Introducing SSHFS: Using SSH to create a temporary file system on your computer that, as you edit, is updated on the Unix Timeshare.
-    - Here are a couple videos I made on how to get SSHFS to work on your system:
-        - Windows:
-            .. raw:: html
+- For those who are not super into working with the command-line and MUCH prefer working with their Windows File Explorer/MacOS Finder, you will likely want an alternative.
+- Introducing SSHFS: Using SSH to create a temporary file system on your computer that, as you edit, is updated on the Unix Timeshare.
+- Here are a couple videos I made on how to get SSHFS to work on your system:
+    - Windows:
+        .. raw:: html
 
-                <div style="width:100%;height:0px;position:relative;padding-bottom:56.250%;"><iframe src="https://streamable.com/e/anz77q?loop=0" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
+            <div style="width:100%;height:0px;position:relative;padding-bottom:56.250%;"><iframe src="https://streamable.com/e/anz77q?loop=0" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
 
-        - Linux:
-            .. raw:: html
+    - Linux:
+        .. raw:: html
 
-                <div style="width:100%;height:0px;position:relative;padding-bottom:56.250%;"><iframe src="https://streamable.com/e/1d6q99?loop=0" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
-            
-            - codeconnect.sh:
-                .. code:: bash
-                    
-                    sudo mkdir ~/UCSC_UNIX
-                    cd ~
-                    sudo chown <username> UCSC_UNIX
-                    chmod 777 UCSC_UNIX
-                    sshfs <yourCruzID>@unix.ucsc.edu:/afs/cats.ucsc.edu/users/p/<yourCruzID> ./UCSC_UNIX
+            <div style="width:100%;height:0px;position:relative;padding-bottom:56.250%;"><iframe src="https://streamable.com/e/1d6q99?loop=0" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
+        
+        - codeconnect.sh:
+            .. code:: bash
+                
+                sudo mkdir ~/UCSC_UNIX
+                cd ~
+                sudo chown <username> UCSC_UNIX
+                chmod 777 UCSC_UNIX
+                sshfs <yourCruzID>@unix.ucsc.edu:/afs/cats.ucsc.edu/users/p/<yourCruzID> ./UCSC_UNIX
 
-        - MacOS:
-            .. raw:: html
+    - MacOS:
+        .. raw:: html
 
-                <div style="width:100%;height:0px;position:relative;padding-bottom:56.250%;"><iframe src="https://streamable.com/e/zfyo14?loop=0" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
+            <div style="width:100%;height:0px;position:relative;padding-bottom:56.250%;"><iframe src="https://streamable.com/e/zfyo14?loop=0" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
 
-            - sshfs command:
-                .. code:: bash
+        - sshfs command:
+            .. code:: bash
 
-                    sshfs <yourCruzID>@unix.ucsc.edu:/afs/cats.ucsc.edu/users/p/<yourCruzID> ./UCSC_UNIX
+                sshfs <yourCruzID>@unix.ucsc.edu:/afs/cats.ucsc.edu/users/p/<yourCruzID> ./UCSC_UNIX

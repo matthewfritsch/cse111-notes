@@ -24,23 +24,18 @@ Copying his code/PDFs/etc. for an assignment
 -----------------------------------------------
 
 - This one can seem a bit daunting if your Unix commandline experience is limited. Don't worry, I'll make it super clear (and if you're still confused, DM me on Discord: macmoholic#2221)
-
     - Open your SSH client (Putty, OpenSSH, terminal, etc.) to the unix.ucsc.edu server. 
-
     - Make a folder where you want to copy things over (this can be done using the command 'mkdir'. e.g, "mkdir Lab1" will make the folder Lab1).
-
     - Change directory into the folder "cd <foldername>"
-
     - Now, you want to use the copy command to bring the files from Professor Mackey's assignment folder into your new one. Go onto his website and find the "PWD" for an assignment/lab (should be in big, green text at the top). Then, run the command
 
-        .. code:: bash
+    .. code:: bash
 
-            cp -r <pwd>/* .
+        cp -r <pwd>/* .
 
-        (Make note of the "." at the end!!! You need that.)
+    (Make note of the "." at the end!!! You need that.)
 
     - The above command reads: "copy (cp), recursively (-r), everything in the folder (<pwd>/\*), to here (.)"
-
     - One final example:
 
     .. code:: bash
@@ -63,18 +58,18 @@ Get the work done on your end (using g++)
 
 - Once your code is compiled into an executable file (in my example, called 'runnable_file'), you can run it! Just use:
 
-    .. code:: bash
+.. code:: bash
 
-        ./<executable
+    ./<executable
 
-        ./runnable_file
+    ./runnable_file
 
 - **However**, you are NOT required to use g++ to compile and run all of the files in our projects! You can use 'make' to get a lot of your work done.
     - Once you're in the 'code' folder in the assignment, you can run:
 
-        .. code:: bash
+    .. code:: bash
 
-            make
+        make
     
     - And it should compile the program for you.
 
@@ -95,8 +90,9 @@ Submitting your assignment
 - The 'submit' command is really chill. You can run 'submit -m' to see the explanation on how it works. If you don't care, then keep reading.
 
 - The format is "submit <class> <assignment name> <[files you want to submit]>". For example:
-    .. code:: bash
-
-        submit cse111-wm lab0 file1.cpp file2.cpp file3.cpp
+    
+.. code:: bash
+    
+    submit cse111-wm lab0 file1.cpp file2.cpp file3.cpp
 
 - Seems easy, right? Just make sure your ssh client is in the correct folder, and this should literally be all you have to do.
